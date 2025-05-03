@@ -1,4 +1,4 @@
-#This file configures AWS provider for terraform
+#This file configures AWS provider for terraform project
 terraform {
   required_providers {
     aws = {
