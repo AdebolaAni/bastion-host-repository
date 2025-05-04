@@ -8,7 +8,7 @@ resource "aws_security_group" "jump_host_security_group" {
     description = "Allow SSH to jump server"
     from_port   = 22
     to_port     = 22
-    protocol    = "ssh"
+    protocol    = "tcp"
     cidr_blocks = ["102.89.32.214/32"]
   }
 
@@ -33,7 +33,7 @@ resource "aws_security_group" "private_instance_SG" {
     description = "Allow SSH access from jump host"
     from_port   = 22
     to_port     = 22
-    protocol    = "ssh"
+    protocol    = "tcp"
     security_groups = [aws_security_group.jump_host_security_group.id]
   }
 
